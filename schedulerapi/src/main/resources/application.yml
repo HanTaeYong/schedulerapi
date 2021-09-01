@@ -1,0 +1,54 @@
+server:
+  address: 10.139.251.84
+#  address: 192.168.123.140
+#  address: 192.168.0.100
+  port: 8081
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/scheduler
+    username: scheduler
+    password: 1q2w3e4r!
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+#        show_sql: trues
+        format_sql: true
+
+  jwt:
+    header: x-api-token
+    secret: J7kTUl8c5OAmIvMb7pOTGQ==
+    token-validity-in-seconds:
+
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: hty1048
+    password: gksxod0504
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+          mail: hty1048@naver.com
+          ssl.enable: true
+
+logging:
+  level:
+    org.hibernate:
+#      SQL: debug
+#      type: trace
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
